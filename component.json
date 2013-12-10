@@ -1,0 +1,14 @@
+{
+	"name": "position",
+	"repo": "darsain/position",
+	"description": "Returns element's position box object relative to documentElement.",
+	"version": "0.1.0",
+	"keywords": [
+		"position",
+		"element"
+	],
+	"scripts": [
+		"index.js"
+	],
+	"license": "MIT"
+}
