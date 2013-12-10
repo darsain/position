@@ -29,7 +29,7 @@ Position box object looks like this:
 }
 ```
 
-You can also pass `window`.
+You can also pass `window` to get the current window position on a page.
 
 ## License
 
