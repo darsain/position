@@ -1,13 +1,5 @@
-'use strict';
-
-/**
- * Transport.
- */
 module.exports = position;
 
-/**
- * Globals.
- */
 var win = window;
 var doc = win.document;
 var docEl = doc.documentElement;
@@ -21,9 +13,7 @@ var docEl = doc.documentElement;
  * @return {Object}
  */
 function extend(a, b) {
-	for (var key in b) {
-		a[key] = b[key];
-	}
+	for (var key in b) a[key] = b[key];
 	return a;
 }
 
