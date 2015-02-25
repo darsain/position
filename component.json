@@ -2,7 +2,7 @@
 	"name": "position",
 	"repo": "darsain/position",
 	"description": "Returns element's position relative to document, window, or other elements.",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"keywords": [
 		"position",
 		"element"
