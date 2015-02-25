@@ -4,55 +4,69 @@
 		<title>Position</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<style>
-			html, body { height: 1000px; margin: 0; padding: 0; }
+			html, body { margin: 0; padding: 0; }
+			body.scroll { width: 5000px; height: 5000px; }
+			body { font-family: Consolas, monospace; }
+			.box {
+				top: 300px;
+				width: 160px;
+				height: 180px;
+				padding: 10px;
+				color: #fff;
+				background: #444;
+			}
 			.winpos {
 				position: fixed;
-				top: 10px;
-				right: 10px;
+				top: 0;
+				left: 0;
 			}
-			.target {
+			.docpos {
+				position: fixed;
+				top: 0;
+				right: 0;
+			}
+			.absolute {
 				position: absolute;
-				left: 500px;
-				top: 200px;
-				width: 200px;
+				left: 200px;
+			}
+			.absolute.win {
+				left: 400px;
+			}
+			.fixed {
+				position: fixed;
+				left: 600px;
+			}
+			.fixed.win {
+				left: 800px;
+			}
+			.parent {
+				position: relative;
+				top: 600px;
+				left: 200px;
+				width: 380px;
 				height: 300px;
-				background: red;
+				outline: 1px solid #444;
+			}
+			.parent .child {
+				position: absolute;
+				top: 50px;
+				left: 100px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="winpos" id="winpos"></div>
-		<div class="target" id="target"></div>
+		<div class="box winpos" id="winpos"></div>
+		<div class="box docpos" id="docpos"></div>
 
-		<script src="../build/build.js"></script>
-		<script>
-			var position = require('position');
-			var target = document.getElementById('target');
-			var winpos = document.getElementById('winpos');
+		<div class="box absolute" id="absolute"></div>
+		<div class="box absolute win" id="absolute-win"></div>
+		<div class="box fixed" id="fixed"></div>
+		<div class="box fixed win" id="fixed-win"></div>
 
-			function check() {
-				var pos = position(target);
-				target.innerHTML = 'left: ' + pos.left + '<br>' +
-					'top: ' + pos.top + '<br>' +
-					'width: ' + pos.width + '<br>' +
-					'height: ' + pos.height + '<br>' +
-					'right: ' + pos.right + '<br>' +
-					'bottom: ' + pos.bottom;
+		<div class="parent" id="parent">
+			<div class="box child" id="child"></div>
+		</div>
 
-				pos = position(window);
-				winpos.innerHTML = 'left: ' + pos.left + '<br>' +
-					'top: ' + pos.top + '<br>' +
-					'width: ' + pos.width + '<br>' +
-					'height: ' + pos.height + '<br>' +
-					'right: ' + pos.right + '<br>' +
-					'bottom: ' + pos.bottom;
-			}
-
-			if (document.addEventListener) {
-				document.addEventListener('click', check);
-			} else {
-				document.attachEvent('onclick', check);
-			}
-		</script>
+		<script src="../build/test.js"></script>
 	</body>
 </html>
