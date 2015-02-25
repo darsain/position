@@ -1,7 +1,7 @@
 {
 	"name": "position",
 	"repo": "darsain/position",
-	"description": "Returns element's position box object relative to documentElement.",
+	"description": "Returns element's position relative to document, window, or other elements.",
 	"version": "0.1.0",
 	"keywords": [
 		"position",
@@ -10,5 +10,8 @@
 	"scripts": [
 		"index.js"
 	],
+	"dependencies": {
+		"darsain/iswindow": "^1.0.0"
+	},
 	"license": "MIT"
 }
